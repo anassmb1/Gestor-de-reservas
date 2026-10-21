@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% load crispy_forms_tags %}
+
+{% block head_title %}Nueva reserva{% endblock %}
+    
+{% block page_content %}
+    <div class="container">
+        <h1>Nueva reserva</h1>
+        {% include '_includes/_messages.html' %}
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.court_type|as_crispy_field }}
+            {{ form.start_datetime|as_crispy_field }}
+            {{ form.end_datetime|as_crispy_field }}
+            {{ form.non_field_errors }}
+            <button type="submit" class="btn btn-primary">Nueva reserva</button>
+        </form>
+    </div>
+{% endblock %}

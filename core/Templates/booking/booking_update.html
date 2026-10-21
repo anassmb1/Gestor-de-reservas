@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% load crispy_forms_tags %}
+
+{% block head_title %}Página Home{% endblock %}
+    
+{% block page_content %}
+    {% include '_includes/_messages.html' %}
+    <div class="container">
+    <h1>Mi reserva</h1>
+        <form action="" method="post">
+        {% csrf_token %}
+            <div>
+                {{ form.court_type|as_crispy_field }}
+                {{ form.start_datetime|as_crispy_field }}
+                {{ form.end_datetime|as_crispy_field }}
+                {{ form.non_field_errors }}
+            </div>
+            <p><button type="submit" class="btn btn-primary">Actualizar reserva</button></p>
+        </form>
+    </div>
+{% endblock %}

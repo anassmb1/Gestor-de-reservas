@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block head_title %}Página Home{% endblock %}
+    
+{% block page_content %}
+    <h1 class="container">Página de inicio</h1>
+        {% include '_includes/_messages.html' %}
+   
+<div class="container">
+    <h4>¡Bienvenido/a a la gestión de reservas!</h4>
+
+    <p>
+        Desde esta página puedes reservar una pista, elegir el tipo que
+        prefieras y consultar o modificar los datos de una reserva existente.
+    </p>
+
+    <h5>Condiciones de las reservas</h5>
+
+    <ul>
+        <li>
+            <strong>Tipos de pista:</strong>
+            puedes elegir entre pistas Indoor y Outdoor, según la disponibilidad.
+        </li>
+        <li>
+            <strong>Horario de apertura:</strong>
+            <ul>
+                <li>De lunes a viernes: de 9:00 a 22:00.</li>
+                <li>Sábados y domingos: de 10:00 a 21:00.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Intervalos horarios:</strong>
+            las reservas deben comenzar y finalizar en punto (por ejemplo, 10:00, 11:00 o 12:00).
+        </li>
+        <li>
+            <strong>Duración máxima:</strong>
+            cada reserva puede durar un máximo de 2 horas.
+        </li>
+        <li>
+            <strong>Disponibilidad:</strong>
+            no se permiten reservas que se solapen con otras reservas activas.
+            La pista debe estar disponible durante todo el horario seleccionado.
+        </li>
+    </ul>
+
+    <p>
+        Selecciona la fecha, las horas de inicio y finalización y el tipo de
+        pista que prefieras. Comprueba los datos y guarda tu reserva.
+    </p>
+</div>
+{% endblock %}

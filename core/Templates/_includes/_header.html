@@ -1,0 +1,19 @@
+<header>
+    <div class="container">
+        <h1>Gestor de reservas para pistas de padel</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Inicio</a></li>
+                {% if not user.is_authenticated %}
+                    <li><a href="{% url 'register' %}">Registro</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                {% else %}
+                    <li><a href="{% url 'booking_create' %}">Nueva reserva</a></li>
+                    <li><a href="{% url 'booking_list' %}">Mis reservas</a></li>
+                    <li><a href="{% url 'logout' %}">Cerrar sesión</a></li>
+                {% endif %}
+                <li><a href=#>Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>

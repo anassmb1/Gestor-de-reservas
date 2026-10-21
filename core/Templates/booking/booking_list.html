@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block head_title %}Mis reservas{% endblock %}
+    
+{% block page_content %}
+    {% include '_includes/_messages.html' %}
+    <div class="container">
+    <h1>Mis reservas</h1>
+    {% if bookings %}
+        <div class="container"></div>        
+        {% for booking in bookings %}
+            <div class="row">
+                <div class="col-sm">
+                    <p>Fecha: {{ booking.start_datetime|date:"d/m/Y" }}</p>
+                </div>
+                <div class="col-sm">
+                    <p>Hora: {{ booking.start_datetime.time }} - {{ booking.end_datetime.time }}</p>
+                </div>
+                <div class="col-sm">
+                    <p>{{ booking.court }} - {{ booking.court.type }}</p>
+                </div>
+                    <p><a href="{% url 'booking_update' booking.pk %}">Editar reserva</a></p>
+            </div>
+        {% endfor %}
+        </div>
+    {% else %}
+        <p>Por el momento no tienes ningúna reserva</p>
+    {% endif %}
+    </div>
+{% endblock %}
