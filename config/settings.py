@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 from django.urls import reverse_lazy
 
@@ -11,7 +12,7 @@ TEMPLATES_DIR = BASE_DIR/ 'core'/ 'Templates'
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-06!8gh2mz++1h@wqe%k7u3n%yg^v=akut&yp@13zv9v596x64n'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
